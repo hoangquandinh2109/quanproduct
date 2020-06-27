@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ASCGridConfigData } from 'src/app/components/asc-grid/asc-grid.component';
 import { ConfirmComponent } from '../../popups/confirm/confirm.component';
-import { startWith, debounceTime, tap, switchMap, finalize, map } from 'rxjs/operators';
-import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
 @Component({
   selector: 'app-mng-monthi',
   templateUrl: './mng-monthi.component.html',
@@ -11,7 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class MngMonThiComponent implements OnInit {
   searchAdvanced = true;
-  gridData = [1,2,3,4,5];
+  gridData = [];
+  configData: ASCGridConfigData = {
+    colHeadNames: ['STT', 'Kỳ thi', 'Môn thi', 'Hệ Số', 'Ngày', 'Giới tính'],
+    colFieldNames: ['tenKyThi', 'tenMonThi', 'heSo', 'ngay', 'gioiTinh'],
+    colFieldTypes: ['string','string','number','date', 'gender']
+  }
   constructor(
     public dialog: MatDialog
   ) {
@@ -38,6 +41,43 @@ export class MngMonThiComponent implements OnInit {
       dialogRef.afterClosed().subscribe(() => this.loadGrid());
   }
   loadGrid() {
+    this.gridData = [
+      {
+        tenKyThi: 'Kỳ thi 1',
+        tenMonThi: 'Môn thi 1',
+        heSo: 1,
+        ngay: '2020-09-21',
+        gioiTinh: 1
+      },
+      {
+        tenKyThi: 'Kỳ thi 2',
+        tenMonThi: 'Môn thi 2',
+        heSo: 2,
+        ngay: '2020-09-21',
+        gioiTinh: 0
+      },
+      {
+        tenKyThi: 'Kỳ thi 3',
+        tenMonThi: 'Môn thi 3',
+        heSo: 1,
+        ngay: '2020-09-21',
+        gioiTinh: 1
+      },
+      {
+        tenKyThi: 'Kỳ thi 4',
+        tenMonThi: 'Môn thi 4',
+        heSo: 2,
+        ngay: '2020-09-21',
+        gioiTinh: 0
+      },
+      {
+        tenKyThi: 'Kỳ thi 5',
+        tenMonThi: 'Môn thi 5',
+        heSo: 1,
+        ngay: '2020-09-21',
+        gioiTinh: 1
+      }
+    ]
     // this.service.getMonThisList(this.filter).subscribe((resp: any) => {
     //   this.entrancelist = resp.results || []
     //   this.length = resp.rowCount;
