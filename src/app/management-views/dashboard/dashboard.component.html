@@ -1,0 +1,64 @@
+<!-- <img src="assets/img/dashboard.jpg" alt="">
+<br><br><br><br><br><br>
+<img src="assets/img/dashboard2.jpg" alt="">
+<br><br><br><br><br><br> -->
+<h1>Hướng dẫn sử dụng source</h1>
+<h2>Client</h2>
+<p>Tạo component trong thư mục <strong>views</strong> (đặt vị trí component theo các folder đã tạo sẵn)</p>
+<p>Declare component trong <span
+        style="color: rgb(0, 148, 240); background-color: rgb(244, 246, 246); font-family: Consolas, Courier New, monospace; font-size: 14px; white-space: pre;">ViewsModule</span>
+</p>
+<p>Tạo routing component trong <span
+        style="color: rgb(0, 148, 240); background-color: rgb(244, 246, 246); font-family: Consolas, Courier New, monospace; font-size: 14px; white-space: pre;">ViewsRoutingModule</span>
+</p>
+<hr>
+<h2>Management</h2>
+<p>Tạo component trong thư mục <strong>management-views</strong> (đặt vị trí component theo các folder đã tạo sẵn)</p>
+<p>Declare component trong <span
+        style="color: rgb(0, 148, 240); background-color: rgb(244, 246, 246); font-family: Consolas, Courier New, monospace; font-size: 14px; white-space: pre;">ManagementViewsModule</span>
+</p>
+<p>Tạo routing component trong <span
+        style="color: rgb(0, 148, 240); background-color: rgb(244, 246, 246); font-family: Consolas, Courier New, monospace; font-size: 14px; white-space: pre;">ManagementViewsRoutingModule</span>
+</p>
+<p><strong>Lưu ý:</strong> Đặt tên component theo cú pháp như sau</p>
+<ul>
+    <li>Đối với tên file:
+        <div
+            style="color: #005661;background-color: #f4f6f6;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;">
+            <div>templateUrl<span style="color: #004d57;">:</span>&nbsp;<span
+                    style="color: #00b368;">'./mng-monthi.component.html'</span><span style="color: #004d57;">,</span>
+            </div>
+            <div>styleUrls<span style="color: #004d57;">:</span>&nbsp;<span style="color: #004d57;">[</span><span
+                    style="color: #00b368;">'./mng-monthi.component.sass'</span><span style="color: #004d57;">]</span>
+            </div>
+        </div>
+    </li>
+    <li>Đối với tên class:
+        <div
+            style="color: #005661;background-color: #f4f6f6;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;">
+            <span style="color: #ff5792;font-style: italic;">export</span>&nbsp;<span
+                style="color: #e64100;">class</span>&nbsp;<span style="color: #0094f0;">MngMonThiComponent</span>&nbsp;
+        </div>
+    </li>
+</ul>
+<strong>Ví dụ:</strong>
+<div
+    style="color: #005661;background-color: #f4f6f6;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;">
+    <div><span style="color: #ff5792;font-style: italic;">import</span>&nbsp;<span
+            style="color: #004d57;">{{'{'}}</span>&nbsp;<span style="color: #f49725;">Component</span>&nbsp;<span
+            style="color: #004d57;">{{'}'}}</span>&nbsp;<span
+            style="color: #ff5792;font-style: italic;">from</span>&nbsp;<span
+            style="color: #00b368;">'@angular/core'</span><span style="color: #004d57;">;</span></div><br>
+    <div><span style="color: #0095a8;">@Component</span><span style="color: #004d57;">({{'{'}}</span></div>
+    <div>&nbsp;&nbsp;selector<span style="color: #004d57;">:</span>&nbsp;<span
+            style="color: #00b368;">'app-mng-monthi'</span><span style="color: #004d57;">,</span></div>
+    <div>&nbsp;&nbsp;templateUrl<span style="color: #004d57;">:</span>&nbsp;<span
+            style="color: #00b368;">'./mng-monthi.component.html'</span><span style="color: #004d57;">,</span></div>
+    <div>&nbsp;&nbsp;styleUrls<span style="color: #004d57;">:</span>&nbsp;<span style="color: #004d57;">[</span><span
+            style="color: #00b368;">'./mng-monthi.component.sass'</span><span style="color: #004d57;">]</span></div>
+    <div><span style="color: #004d57;">{{'}'}})</span></div>
+    <div><span style="color: #ff5792;font-style: italic;">export</span>&nbsp;<span
+            style="color: #e64100;">class</span>&nbsp;<span style="color: #0094f0;">MngMonThiComponent</span>&nbsp;<span
+            style="color: #004d57;">{{'{'}}</span></div>
+    <div><span style="color: #004d57;">{{'}'}}</span></div><br>
+</div>
