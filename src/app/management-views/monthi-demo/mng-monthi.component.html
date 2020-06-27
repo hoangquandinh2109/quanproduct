@@ -32,34 +32,37 @@
                 </div>
             </form>
         </div>
-        <table class="table">
-            <thead>
-                <th class="col-head">STT</th>
-                <th class="col-head">Kỳ thi</th>
-                <th class="col-head">Môn thi</th>
-                <th class="col-head">Hệ số</th> 
-                <th class="col-head"></th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of gridData; let i = index">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    
-                    <td class="text-center">
-                        <button mat-icon-button color="primary" matTooltip="Sửa" [matTooltipPosition]="'above'">
-                            <i class="material-icons">create</i>
-                        </button>
-                        &nbsp;
-                        <button  mat-icon-button color="warn" matTooltip="Xóa" [matTooltipPosition]="'above'">
-                            <i class="material-icons">clear</i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <mat-paginator [length]="10" [pageSize]="5" [pageSizeOptions]="[5,10,20,100]"
-            (page)="pageEvent($event)">
-        </mat-paginator>
+        <div class="wrap-table">
+            <table class="table">
+                <thead>
+                    <th class="col-head">STT</th>
+                    <th class="col-head">Kỳ thi</th>
+                    <th class="col-head">Môn thi</th>
+                    <th class="col-head">Hệ số</th> 
+                    <th class="col-head"></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of gridData; let i = index">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                        <td class="text-center">
+                            <button mat-icon-button color="primary" matTooltip="Sửa" [matTooltipPosition]="'above'">
+                                <i class="material-icons">create</i>
+                            </button>
+                            &nbsp;
+                            <button  mat-icon-button color="warn" matTooltip="Xóa" [matTooltipPosition]="'above'">
+                                <i class="material-icons">clear</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <mat-paginator [length]="10" [pageSize]="5" [pageSizeOptions]="[5,10,20,100]"
+                (page)="pageEvent($event)">
+            </mat-paginator>
+        </div>
     </div>
 </div>

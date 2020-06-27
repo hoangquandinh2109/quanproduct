@@ -66,16 +66,13 @@ button:focus
     flex: 1
 .mat-form-field
   display: block !important
-
-school-layout-management .table
+.wrap-table
   border: 1px #a3d0e4 solid
+  border-radius: 5px
+  overflow: hidden
+school-layout-management .table
   margin-bottom: 0
-  border-bottom-width: 0px
-  border-top-right-radius: 5px
-  border-top-left-radius: 5px
   font-size: 12px
-  &.table-no-paging
-    border-bottom-width: 1px
   .mat-icon-button
     height: 23px
     width: 23px
@@ -90,6 +87,10 @@ school-layout-management .table thead th
   border-top: none
   padding: 5px
   color: #00435e
+  &:first-child
+    border-left: none
+  &:last-child
+    border-right: none
 school-layout-management .table tbody 
   tr
     &:nth-of-type(odd)
@@ -105,11 +106,9 @@ school-layout-management .table tbody
         text-align: center
 .mat-paginator
   color: #00435e
-  border: 1px #a3d0e4 solid
+  border-top: 1px #a3d0e4 solid
   background-image: none,linear-gradient(to bottom,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%)
   background-color: #d9ecf5
-  border-bottom-right-radius: 5px
-  border-bottom-left-radius: 5px
   .mat-paginator-container
     min-height: 40px
   .mat-form-field-appearance-legacy .mat-form-field-infix

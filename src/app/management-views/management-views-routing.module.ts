@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MngMonThiComponent } from './monthi-demo/mng-monthi.component';
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
             { path: 'cauhoithuonggap', component: DashboardComponent }
         ]
     },
-    { path: 'phancongchuyenmon', component: DashboardComponent }
+    { path: 'phancongchuyenmon', component: DashboardComponent },
+    { path: 'monthi', component: MngMonThiComponent }//demo
 ];
 
 @NgModule({

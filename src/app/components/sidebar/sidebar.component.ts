@@ -79,7 +79,7 @@ export class SidebarComponent  {
     },
     {
       title: 'Quản lý môn thi (Demo)',
-      link: '/quantrivien/môn thi',
+      link: '/quantrivien/monthi',
       hasChild: false,
       icon: 'subject'
     }
