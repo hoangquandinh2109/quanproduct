@@ -6,7 +6,7 @@
                 <ng-container *ngFor="let clHead of config.colHeadNames">
                     <th class="col-head">{{clHead}}</th>
                 </ng-container>
-                <th *ngIf="config.buttons.length > 0"></th>
+                <th *ngIf="config.buttons && config.buttons.length > 0"></th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                     <td *ngIf="config.colFieldTypes[colNum] == 'date'" class="text-center">{{item[colField] | date: 'dd/MM/yyyy'}}</td>
                     <td *ngIf="config.colFieldTypes[colNum] == 'gender'">{{item[colField] | gender}}</td>
                 </ng-container>
-                <td class="text-center">
+                <td class="text-center" *ngIf="config.buttons && config.buttons.length > 0">
                     <ng-container *ngFor="let btn of config.buttons; let btnIndex = index">
                         <button mat-icon-button (click)="buttonClickFn(btn.functionName, item)" [color]="btn.color" [matTooltip]="btn.tooltip" [matTooltipPosition]="'above'">
                             <i class="material-icons">{{btn.icon}}</i>

@@ -161,6 +161,7 @@ export class UtilsService {
     return JSON.parse('{"' + response.replace(/;/g, '", "').replace(/=/g, '": "') + '"}');
   }
   chooseAvatar() { document.getElementById('fileImg').click(); }
+  chooseFile() { document.getElementById('file-selector').click(); }
   decentralizedScreen(screenRoute: string){
     let decentralization = JSON.parse(localStorage.getItem('decentralizedMenu')).find((x: any)=>x.routerMapping == screenRoute);
     if(!decentralization || !decentralization.allowRead){

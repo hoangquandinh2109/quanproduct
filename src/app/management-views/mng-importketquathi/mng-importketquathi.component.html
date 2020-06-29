@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Kết quả thi THPT Quốc Gia</strong>
+        <div class="spacer"></div>
+        <button class="bg-success mr-2"  mat-mini-fab matTooltip="Xuất Excel" (click)="exportExcel()" [matTooltipPosition]="'above'">
+            <i class="fas fa-file-excel"></i>
+        </button>
+        <button color="primary" mat-mini-fab matTooltip="Import kết quả thi" (click)="importKetQuaThi()" [matTooltipPosition]="'above'">
+            <i class="material-icons">add</i>
+        </button>
+        <button color="accent" mat-mini-fab matTooltip="Tìm kiếm nâng cao" class="ml-2" [matTooltipPosition]="'above'"
+        (click)="searchAdvanced = !searchAdvanced">
+            <i class="material-icons">build</i>
+        </button>
+    </div>
+    <div class="card-body">
+        <div *ngIf="searchAdvanced">
+            <form class="row">
+                <div class="col-3 ">
+                    <mat-form-field appearance="outline" [floatLabel]="'always'">
+                        <mat-label>Năm</mat-label> 
+                        <mat-select>
+                            <mat-option value="2022" >2022</mat-option>
+                            <mat-option value="2021" >2021</mat-option>
+                            <mat-option value="2020" >2020</mat-option>
+                            <mat-option value="2019" >2019</mat-option>
+                            <mat-option value="2018" >2018</mat-option>
+                            <mat-option value="2017" >2017</mat-option>
+                            <mat-option value="2016" >2016</mat-option>
+                            <mat-option value="2015" >2015</mat-option>
+                            <mat-option value="2014" >2014</mat-option>
+                            <mat-option value="2013" >2013</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-3 ">
+                    <mat-form-field appearance="outline" [floatLabel]="'always'">
+                        <mat-label>Mã học sinh</mat-label> 
+                        <input matInput> 
+                    </mat-form-field>
+                </div>
+                <div class="col-3 ">
+                    <mat-form-field appearance="outline" [floatLabel]="'always'">
+                        <mat-label>Họ tên</mat-label> 
+                        <input matInput> 
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-1 pt-1">
+                    <button color="primary" mat-mini-fab matTooltip="Tìm kiếm" (click)="loadGrid()" [matTooltipPosition]="'above'">
+                        <i class="material-icons">search</i>
+                    </button>
+                    <button style="display: none;" id="btnvF"></button>
+                </div>
+            </form>
+        </div>
+        <asc-grid [data]="gridData" [config]="configData" [length]="5" [pageIndex]="0" [pageSize]="10" (buttonClick)="buttonClick($event)" (pageChange)="pageEvent($event)"></asc-grid>
+    </div>
+</div>

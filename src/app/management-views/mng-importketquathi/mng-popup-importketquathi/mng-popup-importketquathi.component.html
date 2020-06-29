@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Import kết quả thi</strong>
+        <div class="spacer"></div>
+        <button mat-icon-button color="warn" (click)="close()" matTooltip="Đóng" [matTooltipPosition]="'above'">
+            <i class="material-icons">clear</i>
+        </button>
+    </div>
+    <div class="card-body scroll-y" [style.max-height]="data.height">
+        <form class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" [floatLabel]="'always'">
+                    <mat-label>Năm</mat-label>
+                    <mat-select required [(value)]="importKetQuaThiModel.namHoc" >
+                        <mat-option [value]="2022" >2022</mat-option>
+                        <mat-option [value]="2021" >2021</mat-option>
+                        <mat-option [value]="2020" >2020</mat-option>
+                        <mat-option [value]="2019" >2019</mat-option>
+                        <mat-option [value]="2018" >2018</mat-option>
+                        <mat-option [value]="2017" >2017</mat-option>
+                        <mat-option [value]="2016" >2016</mat-option>
+                        <mat-option [value]="2015" >2015</mat-option>
+                        <mat-option [value]="2014" >2014</mat-option>
+                        <mat-option [value]="2013" >2013</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" [floatLabel]="'always'">
+                    <mat-label>File</mat-label>
+                    <input matInput required readonly [value]="importKetQuaThiModel.tenFile">
+                    <button (click)="utils.chooseFile()" id="button-file" matSuffix><i class="material-icons">attachment</i></button>
+                </mat-form-field>
+                <input #file id="file-selector" type="file" style="display:none;" (change)="finishUpload($event.target.files)">
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" [floatLabel]="'always'">
+                    <mat-label>Kết quả import</mat-label>
+                    <textarea [value]="importKetQuaThiModel.ketQuaImport" readonly matInput rows="8"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer text-center">
+        <button mat-raised-button color="primary" (click)="taiVe()">Tải về</button>
+        &nbsp;
+        <button mat-raised-button color="primary" (click)="import()">Import</button>
+        &nbsp;
+        <button mat-raised-button color="warn" (click)="close()">Đóng</button>
+    </div>
+</div>
