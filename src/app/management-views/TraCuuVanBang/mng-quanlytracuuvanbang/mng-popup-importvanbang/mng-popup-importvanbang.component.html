@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Import văn bằng</strong>
+        <div class="spacer"></div>
+        <button mat-icon-button color="warn" (click)="close()" matTooltip="Đóng" [matTooltipPosition]="'above'">
+            <i class="material-icons">clear</i>
+        </button>
+    </div>
+    <div class="card-body scroll-y" [style.max-height]="data.height">
+        <mat-form-field appearance="outline" [floatLabel]="'always'">
+            <mat-label>File</mat-label>
+            <input matInput required readonly [value]="tenFile">
+            <button (click)="suffixFileClick()" id="button-file" matSuffix><i [style.color]="tenFile != '' ? 'red' : ''" class="material-icons">{{tenFile == '' ? 'attachment' : 'clear'}}</i></button>
+        </mat-form-field>
+        <input #file id="file-selector" type="file" style="display:none;" (change)="finishUpload($event.target.files)">
+    </div>
+    <div class="card-footer text-center">
+        <button mat-raised-button color="primary" (click)="taiVe()">Tải về</button>
+        &nbsp;
+        <button mat-raised-button color="primary" (click)="import()">Import</button>
+        &nbsp;
+        <button mat-raised-button color="warn" (click)="close()">Đóng</button>
+    </div>
+</div>

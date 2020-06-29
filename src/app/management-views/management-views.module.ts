@@ -25,8 +25,10 @@ import { SharedModule } from '../shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManagementViewsRoutingModule } from './management-views-routing.module';
 import { MngMonThiComponent } from './monthi-demo/mng-monthi.component';
-import { MngImportKetQuaThiComponent } from './mng-importketquathi/mng-importketquathi.component';
-import { MngPopupImportKetQuaThiComponent } from './mng-importketquathi/mng-popup-importketquathi/mng-popup-importketquathi.component';
+import { MngImportKetQuaThiComponent } from './TraCuuDiemThi/mng-importketquathi/mng-importketquathi.component';
+import { MngQuanLyTraCuuVanBangComponent } from './TraCuuVanBang/mng-quanlytracuuvanbang/mng-quanlytracuuvanbang.component';
+import { MngPopupImportKetQuaThiComponent } from './TraCuuDiemThi/mng-importketquathi/mng-popup-importketquathi/mng-popup-importketquathi.component';
+import { MngPopupImportVanBangComponent } from './TraCuuVanBang/mng-quanlytracuuvanbang/mng-popup-importvanbang/mng-popup-importvanbang.component';
 
 
 
@@ -37,7 +39,10 @@ import { MngPopupImportKetQuaThiComponent } from './mng-importketquathi/mng-popu
     InfoDialogComponent,
     MngMonThiComponent,
     MngImportKetQuaThiComponent,
-    MngPopupImportKetQuaThiComponent
+    MngQuanLyTraCuuVanBangComponent,
+    //Popup
+    MngPopupImportKetQuaThiComponent,
+    MngPopupImportVanBangComponent
   ],
   imports: [
     CommonModule,
@@ -72,7 +77,8 @@ import { MngPopupImportKetQuaThiComponent } from './mng-importketquathi/mng-popu
   ],
   entryComponents: [
     ConfirmComponent,
-    MngPopupImportKetQuaThiComponent
+    MngPopupImportKetQuaThiComponent,
+    MngPopupImportVanBangComponent
   ]
 })
 export class ManagementViewsModule { }
