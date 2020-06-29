@@ -20,15 +20,11 @@ export class MngPopupImportKetQuaThiComponent {
     this.dialogRef.close();
   }
   taiVe() {
-    if(this.importKetQuaThiModel.namHoc && this.importKetQuaThiModel.tenFile != ''){
       // var downloadURL = window.URL.createObjectURL({size: 12});
       var link = document.createElement('a');
       link.href = 'fakeurl';
       link.download = 'Ketquathi.exe';
       link.click();
-    }else {
-      this.utils.showNotification('top','right','Không bỏ trống trường bắt buộc!', 3);
-    }
   }
   import() {
     if(this.importKetQuaThiModel.namHoc && this.importKetQuaThiModel.tenFile != ''){
