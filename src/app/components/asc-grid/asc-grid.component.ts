@@ -4,7 +4,7 @@ export class ASCGridConfigData{
     colHeadNames: string[]
     colFieldNames: string[]
     colFieldTypes: string[]
-    buttons: ASCGridButton[]
+    buttons?: ASCGridButton[]
 }
 export class ASCGridButton{
     color: string;
