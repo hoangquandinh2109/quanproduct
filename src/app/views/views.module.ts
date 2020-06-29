@@ -21,7 +21,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from '../shared.module';
 import { IndexComponent } from './index/index.component';
 import { ViewsRoutingModule } from './views-routing.module';
-import { Index2Component } from './index/index2.component';
+import { Index2Component } from './index2/index2.component';
 
 
 
