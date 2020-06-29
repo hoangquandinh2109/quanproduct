@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ASCGridConfigData } from 'src/app/components/asc-grid/asc-grid.component';
+import { ASCGridConfigData, ASCGridButton } from 'src/app/components/asc-grid/asc-grid.component';
 import { ConfirmComponent } from '../../popups/confirm/confirm.component';
 @Component({
   selector: 'app-mng-monthi',
@@ -13,7 +13,21 @@ export class MngMonThiComponent implements OnInit {
   configData: ASCGridConfigData = {
     colHeadNames: ['STT', 'Kỳ thi', 'Môn thi', 'Hệ Số', 'Ngày', 'Giới tính'],
     colFieldNames: ['tenKyThi', 'tenMonThi', 'heSo', 'ngay', 'gioiTinh'],
-    colFieldTypes: ['string','string','number','date', 'gender']
+    colFieldTypes: ['string','string','number','date', 'gender'],
+    buttons: [
+      {
+        color: 'primary',
+        tooltip: 'Sửa',
+        icon: 'create',
+        functionName: 'edit'
+      },
+      {
+        color: 'warn',
+        tooltip: 'Xóa',
+        icon: 'clear',
+        functionName: 'delete'
+      }
+    ]
   }
   constructor(
     public dialog: MatDialog
@@ -27,6 +41,22 @@ export class MngMonThiComponent implements OnInit {
     // this.filter.PageIndex = pageE.pageIndex + 1;
     // this.filter.PageSize = pageE.pageSize;
     // this.loadGrid();
+  }
+  buttonClick(eventInfo: any){
+    switch(eventInfo.functionName){
+      case 'edit':
+        this.edit(eventInfo.item)
+        break;
+      case 'delete':
+        this.delete(eventInfo.item)
+        break;
+    }
+  }
+  edit(item: any){ 
+    alert('edit' + item.id);
+  }
+  delete(item: any){ 
+    alert('delete' + item.id);
   }
 
   openDialog() {
@@ -43,6 +73,7 @@ export class MngMonThiComponent implements OnInit {
   loadGrid() {
     this.gridData = [
       {
+        id: 1,
         tenKyThi: 'Kỳ thi 1',
         tenMonThi: 'Môn thi 1',
         heSo: 1,
@@ -50,6 +81,7 @@ export class MngMonThiComponent implements OnInit {
         gioiTinh: 1
       },
       {
+        id: 2,
         tenKyThi: 'Kỳ thi 2',
         tenMonThi: 'Môn thi 2',
         heSo: 2,
@@ -57,6 +89,7 @@ export class MngMonThiComponent implements OnInit {
         gioiTinh: 0
       },
       {
+        id: 3,
         tenKyThi: 'Kỳ thi 3',
         tenMonThi: 'Môn thi 3',
         heSo: 1,
@@ -64,6 +97,7 @@ export class MngMonThiComponent implements OnInit {
         gioiTinh: 1
       },
       {
+        id: 4,
         tenKyThi: 'Kỳ thi 4',
         tenMonThi: 'Môn thi 4',
         heSo: 2,
@@ -71,6 +105,7 @@ export class MngMonThiComponent implements OnInit {
         gioiTinh: 0
       },
       {
+        id: 5,
         tenKyThi: 'Kỳ thi 5',
         tenMonThi: 'Môn thi 5',
         heSo: 1,

@@ -1,9 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class ASCGridConfigData{
-    colHeadNames: any[]
-    colFieldNames: any[]
-    colFieldTypes: any[]
+    colHeadNames: string[]
+    colFieldNames: string[]
+    colFieldTypes: string[]
+    buttons: ASCGridButton[]
+}
+export class ASCGridButton{
+    color: string;
+    tooltip: string;
+    icon: string;
+    functionName: string;
 }
 @Component({
     selector: 'asc-grid',
@@ -16,11 +23,15 @@ export class ASCGridComponent implements OnInit {
     @Input() pageIndex: number;
     @Input() pageSize: number;
     @Output() pageChange = new EventEmitter<any>();
+    @Output() buttonClick = new EventEmitter<any>();
     
     ngOnInit(): void {
 
     }
     pageEvent(event: any){
         this.pageChange.emit(event);
+    }
+    buttonClickFn(functionName: string, item: any){
+        this.buttonClick.emit({functionName: functionName, item: item});
     }
 }
